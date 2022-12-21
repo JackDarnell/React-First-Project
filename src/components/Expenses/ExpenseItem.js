@@ -1,7 +1,7 @@
 import React from 'react';
 import './ExpenseItem.css';
 import ExpenseDate from './ExpenseDate';
-import Card from './Card';
+import Card from '../UI/Card';
 
 //a component is just a function
 //we can use the function to return some jsx code
