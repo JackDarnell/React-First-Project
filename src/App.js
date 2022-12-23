@@ -1,4 +1,6 @@
 import React from "react";
+
+import NewExpense from "./components/NewExpense/NewExpense";
 import Expenses from "./components/Expenses/Expenses";
 
 function App() {
@@ -19,7 +21,7 @@ function App() {
   // JSX is converted into react code, and then that is converted into browser code.
   return (
     <div>
-      <h2>Let's get started!</h2>
+      <NewExpense></NewExpense>
       <Expenses expenses = {expenses}></Expenses>
     </div>
   );

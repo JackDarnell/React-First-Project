@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; //changes to state values reflect in UI
+import React, { useState } from 'react'; //changes to state values reflect in UI, state is seperated on a per component basis
 
 import './ExpenseItem.css';
 import ExpenseDate from './ExpenseDate';
