@@ -11,6 +11,11 @@ function App() {
     { id: "e4", title: "New Desk (Wooden)", amount: 450, date: new Date(2021, 5, 12) },
   ];
 
+  function addExpenseHandler(expense) {
+    console.log("In App.js");
+    console.log(expense);
+  }
+
   // return React.createElement(
   //   'div', 
   //   {}, 
@@ -21,7 +26,7 @@ function App() {
   // JSX is converted into react code, and then that is converted into browser code.
   return (
     <div>
-      <NewExpense></NewExpense>
+      <NewExpense onAddExpense = {addExpenseHandler}></NewExpense>
       <Expenses expenses = {expenses}></Expenses>
     </div>
   );
