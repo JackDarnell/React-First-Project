@@ -15,7 +15,7 @@ function App() {
 
   function addExpenseHandler(expense) {
     console.log("In App.js");
-    console.log(expense);
+    console.log(expenses);
     //setExpenses([expense, ...expenses]); //update state based on previous state, wrong way
     setExpenses(prevExpenses => {
       return [expense, ...prevExpenses];
