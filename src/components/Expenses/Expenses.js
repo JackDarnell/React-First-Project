@@ -21,8 +21,8 @@ function Expenses(props) {
     return (
         <Card className='expenses'>
             <ExpensesFilter selectedYear={filteredYear} onYearChange={expenseFilterDataHandler}></ExpensesFilter>
-            {props.expenses.map((expense) => (
-                <ExpenseItem title={expense.title} amount={expense.amount} date={expense.date}></ExpenseItem>
+            {props.expenses.map((expense) => ( //key is needed, every item must be a unique id, index could cause bugs not directly attatched to content of item. 
+                <ExpenseItem key={expense.id} title={expense.title} amount={expense.amount} date={expense.date}></ExpenseItem>
             ))}
         </Card>
     )
