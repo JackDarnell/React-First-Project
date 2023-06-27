@@ -14,7 +14,6 @@ function Expenses(props) {
     const [filteredYear, setFilteredYear] = useState('2020');
 
     function expenseFilterDataHandler(expenseFilterYear) {
-        
         setFilteredYear(expenseFilterYear);
     }
 
