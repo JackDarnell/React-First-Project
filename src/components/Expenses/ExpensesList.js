@@ -3,7 +3,7 @@ import React from "react";
 import ExpenseItem from "./ExpenseItem";
 
 function ExpensesList(props) {
-    let expensesContent = <p>No expenses found.</p>; //assign default value
+    let expensesContent = <p className="expenses-list__fallback">No expenses found.</p>; //assign default value
     
     if (props.items.length > 0) {
         expensesContent = props.items.map((expense) => ( //key is needed, every item must be a unique id, index could cause bugs not directly attatched to content of item.
