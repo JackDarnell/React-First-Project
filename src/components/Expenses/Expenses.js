@@ -11,17 +11,21 @@ import ExpensesFilter from '../ExpenseFilter/ExpensesFilter';
 //props stands for properties
 function Expenses(props) {
 
-    const [filteredYear, setFilteredYear] = useState('2022');
+    const [filteredYear, setFilteredYear] = useState('2020');
 
-    function expenseFilterDataHandler(expenseFilterData) {
-        console.log(expenseFilterData);
-        setFilteredYear(expenseFilterData);
+    function expenseFilterDataHandler(expenseFilterYear) {
+        
+        setFilteredYear(expenseFilterYear);
     }
+
+    const filteredExpenses = props.expenses.filter(expense => {
+        return expense.date.getFullYear().toString() === filteredYear;
+    });
 
     return (
         <Card className='expenses'>
             <ExpensesFilter selectedYear={filteredYear} onYearChange={expenseFilterDataHandler}></ExpensesFilter>
-            {props.expenses.map((expense) => ( //key is needed, every item must be a unique id, index could cause bugs not directly attatched to content of item. 
+            {filteredExpenses.map((expense) => ( //key is needed, every item must be a unique id, index could cause bugs not directly attatched to content of item. 
                 <ExpenseItem key={expense.id} title={expense.title} amount={expense.amount} date={expense.date}></ExpenseItem>
             ))}
         </Card>
